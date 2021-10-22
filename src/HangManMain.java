@@ -12,13 +12,17 @@ public class HangManMain {
         System.out.println("|welcome to Hangman.        |\n|goodluck, try not to die 😘|");
         System.out.println("-----------------------------");
 
+        System.out.println("your word have been chosen below");
+
         FileReader.getWords();
         String randomWord = FileReader.getRandomWord();
 
         Game newGame = new Game(randomWord);
         newGame.wordToLines(randomWord);
 
+        Game.hangManImage();
         newGame.userInput();
+
     }
 
 }
