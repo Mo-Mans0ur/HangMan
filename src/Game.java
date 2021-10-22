@@ -1,10 +1,19 @@
 import java.util.ArrayList;
 
 public class Game extends FileReader {
-static ArrayList<Character> attempts = new ArrayList<Character>();
+    static ArrayList<Character> attempts = new ArrayList<Character>();
+    private static String word;
 
-    public static void wordToLines() {
-        String word = getRandomWord();     // <--- second problem
+    public Game(String word){
+        this.word = word;
+    }
+
+    public String getWord() {
+        return word;
+    }
+
+    public static void wordToLines(String word) {
+        //String word = getRandomWord();
         try {
             for (int i = 0; i < listOfWords.size(); i++) {
 
@@ -12,13 +21,13 @@ static ArrayList<Character> attempts = new ArrayList<Character>();
                     System.out.print(word.charAt(i));
 
                 } else {
-                    System.out.print( " _ " );
+                    System.out.print( "_" );
                 }
             }
             System.out.println();
 
         } catch (StringIndexOutOfBoundsException e) {
-            e.printStackTrace(); // can continue but still irritating
+            e.printStackTrace();
         }
     }
 
@@ -29,7 +38,7 @@ static ArrayList<Character> attempts = new ArrayList<Character>();
 	at Game.wordToLines(Game.java:10)
 	at HangManMain.main(HangManMain.java:18)
 
-	and im getting 2 words instead of one
+
      */
 
 
@@ -42,9 +51,9 @@ static ArrayList<Character> attempts = new ArrayList<Character>();
 
       String guess = "";
 
-     if (guess == HangManMain.scanner.nextLine()) {
+     if (guess.equals(HangManMain.scanner.nextLine())) {
          attempts.add(guess.charAt(0));
-         wordToLines();
+         wordToLines(word);
      }
 
     }
