@@ -7,15 +7,19 @@ public class HangManMain {
     static Scanner scanner = new Scanner(System.in);
 
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
 
 
         System.out.println("|welcome to Hangman.        |\n|goodluck, try not to die 😘|");
         System.out.println("-----------------------------");
 
         FileReader.getWords();
+
         FileReader.getRandomWord();
+
         Game.wordToLines();
+
+        Game.userInput();
     }
 
 }
