@@ -26,7 +26,7 @@ public class FileReader {
 
     public static String getRandomWord() {
         String word = listOfWords.get(random.nextInt(listOfWords.size()));
-        System.out.println(word); //<---- this is a problem
+        System.out.println(word);
         return word;
     }
 

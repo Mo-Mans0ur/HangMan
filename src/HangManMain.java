@@ -8,17 +8,17 @@ public class HangManMain {
 
 
     public static void main(String[] args) {
-
+        System.out.println("_____________________________");
         System.out.println("|welcome to Hangman.        |\n|goodluck, try not to die 😘|");
         System.out.println("-----------------------------");
 
         FileReader.getWords();
-
         String randomWord = FileReader.getRandomWord();
 
-        Game.wordToLines(randomWord);
+        Game newGame = new Game(randomWord);
+        newGame.wordToLines(randomWord);
 
-        Game.userInput();
+        newGame.userInput();
     }
 
 }
