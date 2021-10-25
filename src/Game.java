@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Game extends FileReader {
     static ArrayList<Character> attempts = new ArrayList<Character>();
     private String word;
+    private int wrongGuesses = 0;
 
 
     public Game(String word){
@@ -39,12 +40,12 @@ public class Game extends FileReader {
 
             System.out.println();
 
-            System.out.println("please input a letter, \nremember to think twice: ");
+            System.out.println("please input a letter below, \nremember to think twice: ");
 
             String guess = HangManMain.scanner.nextLine();
             attempts.add(guess.charAt(0));
             if (wordToLines(word)) {
-                System.out.println("nice!!, he gets to live another day!!");
+                System.out.println("nice!!, he get to live another day!!");
                 break;
 
             }else {
@@ -71,12 +72,10 @@ public static void hangManImage () {
 }
 
     public void wrongWord() {
-        int wrongWordCounter = 0;
-        while (true) {
-            wrongWordCounter++;
+        wrongGuesses++;
 
-
-            if (wrongWordCounter >= 1) {
+        while (wrongGuesses <= 6) {
+            if (wrongGuesses == 1) {
 
                 System.out.println("   __________________");
                 System.out.println("   |  /             |");
@@ -88,9 +87,11 @@ public static void hangManImage () {
                 System.out.println("   |");
                 System.out.println("___|___");
 
+            }else {
+                System.out.println("");
             }
 
-            if (wrongWordCounter >= 2) {
+            if (wrongGuesses == 2) {
 
                 System.out.println("   __________________");
                 System.out.println("   |  /             |");
@@ -102,9 +103,12 @@ public static void hangManImage () {
                 System.out.println("   |");
                 System.out.println("___|___");
 
+            }else {
+                System.out.println("");
+
             }
 
-            if (wrongWordCounter >= 3) {
+            if (wrongGuesses == 3) {
 
                 System.out.println("   __________________");
                 System.out.println("   |  /             |");
@@ -116,9 +120,11 @@ public static void hangManImage () {
                 System.out.println("   |");
                 System.out.println("___|___");
 
+            }else {
+                System.out.println("");
             }
 
-            if (wrongWordCounter >= 4) {
+            if (wrongGuesses == 4) {
 
                 System.out.println("   __________________");
                 System.out.println("   |  /             |");
@@ -130,9 +136,11 @@ public static void hangManImage () {
                 System.out.println("   |");
                 System.out.println("___|___");
 
+            }else {
+                System.out.println("");
             }
 
-            if (wrongWordCounter >= 5) {
+            if (wrongGuesses == 5) {
 
                 System.out.println("   __________________");
                 System.out.println("   |  /             |");
@@ -144,9 +152,11 @@ public static void hangManImage () {
                 System.out.println("   |");
                 System.out.println("___|___");
 
+            }else {
+                System.out.println("");
             }
 
-            if (wrongWordCounter >= 6) {
+            if (wrongGuesses == 6) {
 
                 System.out.println("   __________________");
                 System.out.println("   |  /             |");
@@ -159,8 +169,7 @@ public static void hangManImage () {
                 System.out.println("___|___");
 
             }else {
-                System.out.println("");
-
+                break;
             }
             break;
         }

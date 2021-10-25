@@ -20,6 +20,7 @@ public class HangManMain {
         Game newGame = new Game(randomWord);
         newGame.wordToLines(randomWord);
 
+
         Game.hangManImage();
         newGame.userInput();
 

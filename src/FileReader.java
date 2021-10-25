@@ -7,9 +7,9 @@ import java.util.Scanner;
 
 public class FileReader {
     static Random random = new Random();
-
-
     static ArrayList<String> listOfWords = new ArrayList<String>();
+
+
     public static void getWords() {
         try {
             Scanner scanner = new Scanner(new File("Resource/randomWords.csv"));
@@ -26,7 +26,7 @@ public class FileReader {
 
     public static String getRandomWord() {
         String word = listOfWords.get(random.nextInt(listOfWords.size()));
-        System.out.println(word);
+        System.out.println(word);   //<--Remove later
         return word;
     }
 
