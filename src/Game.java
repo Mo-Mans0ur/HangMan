@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Game extends FileReader {
     static ArrayList<Character> attempts = new ArrayList<Character>();
     private String word;
-    private int wrongGuesses = 0;
+    private int wrongGuesses = 6;
 
 
     public Game(String word){
@@ -20,12 +20,10 @@ public class Game extends FileReader {
 
             int correctLetter = 0;
             for (int i = 0; i < word.length(); i++) {
-
                 if (attempts.contains(word.charAt(i))) {
                     System.out.print(word.charAt(i));
                     correctLetter++;
                 } else {
-
                     System.out.print( "{_}" );
                 }
             }
@@ -36,9 +34,9 @@ public class Game extends FileReader {
 
     public void userInput() {
 
-        while (true) {
+        while (wrongGuesses == 6) {
 
-            System.out.println();
+            System.out.println("");
 
             System.out.println("please input a letter below, \nremember to think twice: ");
 
@@ -46,13 +44,13 @@ public class Game extends FileReader {
             attempts.add(guess.charAt(0));
             if (wordToLines(word)) {
                 System.out.println("nice!!, he get to live another day!!");
-                break;
 
-            }else {
-
-            wrongWord();
 
             }
+            if (wrongGuesses >= 6) {
+                System.out.println("hes dead");
+            }
+
 
         }
 

@@ -21,7 +21,7 @@ public class HangManMain {
         newGame.wordToLines(randomWord);
 
 
-        Game.hangManImage();
+        //Game.hangManImage();
         newGame.userInput();
 
     }
